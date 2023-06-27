@@ -1,2 +1,3 @@
 # SimpleSlider
-Library-agnostic Image slider written in Javascript 
+
+Library-agnostic Image slider written in Javascript

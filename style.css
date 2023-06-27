@@ -1,0 +1,50 @@
+.slider {
+  width: 100%;
+}
+.slider .body {
+  overflow: hidden;
+  position: relative;
+}
+.slider .body .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffff80;
+  cursor: pointer;
+  border-radius: 50px;
+  padding: 5px 10px 5px 10px;
+}
+.slider .body .arrow.prev {
+  left: 0px;
+  margin-left: 10px;
+}
+.slider .body .arrow.next {
+  right: 0px;
+  margin-right: 10px;
+}
+.slider .body .slides {
+  width: 999999em;
+  transition: margin 0.5s ease-in;
+}
+.slider .body .slides img {
+  display: inline-block;
+  margin-left: -4px;
+}
+.slider .pages-container {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.slider .pages-container .page {
+  cursor: pointer;
+  width: 1px;
+  aspect-ratio: 1;
+  border: 1px solid;
+  margin-right: 4px;
+  text-align: center;
+  padding: 3px;
+}
+.slider .pages-container .page.current {
+  background-color: red;
+}
