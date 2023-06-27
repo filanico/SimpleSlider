@@ -37,6 +37,7 @@
   .pages-container {
     position: absolute;
     left: 50%;
+    margin-top: 5px;
     transform: translateX(-50%);
     .pages {
       display: flex;
