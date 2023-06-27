@@ -1,0 +1,55 @@
+.slider {
+  width: 100%;
+
+  .body {
+    overflow: hidden;
+    position: relative;
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ffffff80;
+      cursor: pointer;
+      border-radius: 50px;
+      $padding: 5px;
+      padding: $padding ($padding + 5) $padding ($padding + 5);
+
+      &.prev {
+        left: 0px;
+        margin-left: 10px;
+      }
+      &.next {
+        right: 0px;
+        margin-right: 10px;
+      }
+    }
+    .slides {
+      width: 999999em;
+      transition: margin 0.5s ease-in;
+
+      img {
+        display: inline-block;
+        margin-left: -4px;
+      }
+    }
+  }
+  .pages-container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .page {
+      cursor: pointer;
+      width: 1px;
+      aspect-ratio: 1;
+      border: 1px solid;
+      margin-right: 4px;
+      text-align: center;
+      padding: 3px;
+
+      &.current {
+        background-color: red;
+      }
+    }
+  }
+}
