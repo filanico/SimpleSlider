@@ -12,5 +12,5 @@ Library-agnostic Image slider written in Javascript
 | autoPlay | Boolean | Whether to play carousel on component load | false
 | autoPlayDelay | Boolean | (only on autoPlay=true) Amount of time in milliseconds to wait before switching to next slide | 3000
 | arrows | Boolean | Whether to show or not navigation arrows | false
-| pages | Boolean | Whether to show or not pagination tool to jump directly to a specific page
+| pages | Boolean | Whether to show or not pagination tool to jump directly to a specific page | false
 
