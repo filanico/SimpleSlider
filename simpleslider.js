@@ -1,4 +1,4 @@
-function LightSlider({
+export function LightSlider({
     selector,
     page = 1,
     slidesPerPage = 1,
@@ -13,6 +13,7 @@ function LightSlider({
     let _slides = _slider.querySelector('.slides');
     let _slideImages = _slides.querySelectorAll('img');
     let _slideImageWidth = slideImageWidth || parseFloat(_slideImages[0].width);
+    let _slideImageHeight = _slideImages[0].height;
     let _totPages = Math.ceil(_slideImages.length / slidesPerPage);
     let _autoPlayHandler = null;
     let pagesContainer = null;
@@ -53,6 +54,8 @@ function LightSlider({
     }
     let managePages = () => {
         if (pages) {
+            let pages = document.createElement('div');
+            pages.classList.add('pages');
             pagesContainer = document.createElement('div');
             pagesContainer.classList.add(...['pages-container'])
             pagesContainer.style.width = (_slideImageWidth - 4) + "px";
@@ -64,8 +67,9 @@ function LightSlider({
                 let block = document.createElement('div');
                 block.addEventListener('click', () => onBlockClick(pageNum));
                 block.classList.add(...['page']);
-                pagesContainer.append(block);
+                pages.append(block);
             }
+            pagesContainer.append(pages);
             _slider.append(pagesContainer);
             _slides.addEventListener('simple-slide-update', () => {
                 [...pagesContainer.querySelectorAll('.page')].forEach(pageNode => pageNode.classList.remove('current'));
@@ -75,7 +79,8 @@ function LightSlider({
     }
     let init = () => {
         _slideImages.forEach(img => img.style.width = (_slideImageWidth / slidesPerPage) + "px");
-        _body.style.width = (_slideImageWidth - 4) + "px";
+        _body.style.width = (_slideImageWidth) + "px";
+        _slides.style.height = (_slideImageHeight) + "px";
 
         if (autoPlay) {
             _autoPlayHandler = setInterval(() => {
@@ -102,15 +107,4 @@ function LightSlider({
     }
     autoPlayDelay = autoPlayDelay < 500 ? 500 : autoPlayDelay;
     init();
-}
-
-window.onload = () => {
-    let s = LightSlider({
-        selector: "#slider",
-        slidesPerPage: 1,
-        arrows: true,
-        pages: true,
-        autoPlay: false,
-        autoPlayDelay: 1500,
-    });
 }

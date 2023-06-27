@@ -27,29 +27,32 @@
     .slides {
       width: 999999em;
       transition: margin 0.5s ease-in;
-
+      display: flex;
+      align-items: top;
       img {
         display: inline-block;
-        margin-left: -4px;
       }
     }
   }
   .pages-container {
     position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    .page {
-      cursor: pointer;
-      width: 1px;
-      aspect-ratio: 1;
-      border: 1px solid;
-      margin-right: 4px;
-      text-align: center;
-      padding: 3px;
-
-      &.current {
-        background-color: red;
+    left: 50%;
+    transform: translateX(-50%);
+    .pages {
+      display: flex;
+      justify-content: center;
+      .page {
+        cursor: pointer;
+        width: 1px;
+        aspect-ratio: 1;
+        border: 1px solid;
+        margin-right: 4px;
+        text-align: center;
+        padding: 3px;
+  
+        &.current {
+          background-color: red;
+        }
       }
     }
   }

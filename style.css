@@ -4,6 +4,7 @@
 .slider .body {
   overflow: hidden;
   position: relative;
+  margin: 0 auto;
 }
 .slider .body .arrow {
   position: absolute;
@@ -25,18 +26,22 @@
 .slider .body .slides {
   width: 999999em;
   transition: margin 0.5s ease-in;
+  display: flex;
+  align-items: top;
 }
 .slider .body .slides img {
   display: inline-block;
-  margin-left: -4px;
 }
 .slider .pages-container {
   position: absolute;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slider .pages-container .pages {
   display: flex;
   justify-content: center;
 }
-.slider .pages-container .page {
+.slider .pages-container .pages .page {
   cursor: pointer;
   width: 1px;
   aspect-ratio: 1;
@@ -45,6 +50,6 @@
   text-align: center;
   padding: 3px;
 }
-.slider .pages-container .page.current {
+.slider .pages-container .pages .page.current {
   background-color: red;
 }
